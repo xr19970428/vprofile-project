@@ -11,7 +11,7 @@ pipeline {
         vprofileRegistry = "https://200167892154.dkr.ecr.ap-southeast-2.amazonaws.com"
     }
   stages {
-   stage('Fetch code'){
+    stage('Fetch code'){
       steps {
         git branch: 'docker', url: 'https://github.com/xr19970428/vprofile-project.git'
       }
