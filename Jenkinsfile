@@ -16,24 +16,6 @@ pipeline {
         git branch: 'docker', url: 'https://github.com/xr19970428/vprofile-project.git'
       }
     }
-	  
-    stage('Test'){
-      steps {
-        sh 'mvn test'
-      }
-    }
-
-    stage ('CODE ANALYSIS WITH CHECKSTYLE'){
-            steps {
-                sh 'mvn checkstyle:checkstyle'
-            }
-            post {
-                success {
-                    echo 'Generated Analysis Result'
-                }
-            }
-        }
-
      
     stage('Build App Image') {
        steps {
